@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class EmployeeController {
     private static final Logger LOG = LoggerFactory.getLogger(EmployeeController.class);
@@ -14,6 +16,14 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
+
+
+    @GetMapping("/employee/{id}")
+    public List<Employee> read() {
+        LOG.debug("Received employee create request for id [{}]", id);
+
+        return employeeService.findAll();
+    }
     @PostMapping("/employee")
     public Employee create(@RequestBody Employee employee) {
         LOG.debug("Received employee create request for [{}]", employee);
