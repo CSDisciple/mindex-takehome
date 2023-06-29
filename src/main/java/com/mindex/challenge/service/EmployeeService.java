@@ -9,5 +9,5 @@ public interface EmployeeService {
     Employee read(String id);
     Employee update(Employee employee);
 
-    List<Employee> findAll();
+    List<Employee> readAll();
 }

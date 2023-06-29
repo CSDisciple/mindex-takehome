@@ -36,6 +36,7 @@ public class ReportingServiceImpl implements ReportingService {
 
 
     @Override
+    //ToDo implement readDiagram to return an actually tree from the example
     public ReportingStructure readDiagram(String id){
         ReportingStructure rs = new ReportingStructure();
         return rs;
