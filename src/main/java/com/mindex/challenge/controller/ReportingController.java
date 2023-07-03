@@ -21,11 +21,4 @@ public class ReportingController {
         LOG.debug("Received report structure read request for id [{}]", id);
         return reportService.read(id);
     }
-
-    @GetMapping("/report/diagram/{id}")
-    //ToDo implement the service to return a string diagram;
-    public ReportingStructure reportDiagram(@PathVariable String id){
-        LOG.debug("Received report structure read request for id [{}]", id);
-        return reportService.readDiagram(id);
-    }
 }

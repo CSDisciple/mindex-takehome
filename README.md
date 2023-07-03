@@ -1,4 +1,4 @@
-# Coding Challenge
+Com# Coding Challenge
 ## What's Provided
 A simple [Spring Boot](https://projects.spring.io/spring-boot/) web application has been created and bootstrapped 
 with data. The application contains information about all employees at a company. On application start-up, an in-memory 
@@ -77,10 +77,65 @@ This new type should have a new REST endpoint created for it. This new endpoint 
 the fully filled out ReportingStructure for the specified employeeId. The values should be computed on the fly and will 
 not be persisted.
 
+```json
+{
+  "type":"ReportingStructure",
+  "properties": {
+    "employee": {
+      "type": "Employee"
+    },
+    "numberOfReports": {
+      "type": "int"
+    }
+  }
+}
+```
+
+```
+* READ
+  * HTTP Method: GET
+  * URL: localhost:8080/report/{id}
+  * RESPONSE: ReportingStructure
+```
+
 ### Task 2
 Create a new type, Compensation. A Compensation has the following fields: employee, salary, and effectiveDate. Create 
 two new Compensation REST endpoints. One to create and one to read by employeeId. These should persist and query the 
 Compensation from the persistence layer.
+
+```json
+{
+  "type":"Compensation",
+  "properties": {
+    "employee": {
+      "type": "Employee"
+    },
+    "salary": {
+      "type": "BigDecimal"
+    },
+    "effectiveDate":{
+      "type": "LocalDate"
+    }
+  }
+}
+```
+
+
+```
+* CREATE
+  * HTTP Method: POST
+  * URL: localhost:8080/compensation
+  * PAYLOAD: Compensation
+  * RESPONSE: ResponseEntity<Compensation>
+* READ
+  * HTTP Method: GET
+  * URL: localhost:8080/compensation/{id}
+  * RESPONSE: ResponseEntity<Compensation>
+* READ
+  * HTTP Method: GET
+  * URL: localhost:8080/compensation
+  * RESPONSE: ResponseEntity<Compensation>
+```
 
 ## Delivery
 Please upload your results to a publicly accessible Git repo. Free ones are provided by Github and Bitbucket.
