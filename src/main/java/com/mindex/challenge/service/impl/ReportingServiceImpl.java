@@ -10,9 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.stream.Stream;
-
 @Service
 public class ReportingServiceImpl implements ReportingService {
     private static final Logger LOG = LoggerFactory.getLogger(EmployeeController.class);
@@ -24,24 +21,18 @@ public class ReportingServiceImpl implements ReportingService {
         Employee emp = employeeService.read(id);
 
         LOG.debug("Reading reporting structure for employee id [{}]", emp.getEmployeeId());
-
-        Stream<Employee> streamOfCollection = emp.getDirectReports().stream();
         int numberOfReports = reportCount(emp);
         rs.setEmployee(emp);
         rs.setNumberOfReports(numberOfReports);
 
-
         return rs;
     }
 
-
-    @Override
-    //ToDo implement readDiagram to return an actually tree from the example
-    public ReportingStructure readDiagram(String id){
-        ReportingStructure rs = new ReportingStructure();
-        return rs;
-    }
     public int reportCount(Employee employee){
+        if(employee.getDirectReports() == null){
+            return 0;
+        }
+
         int numberOfReports = employee.getDirectReports().size();
 
         for(Employee report: employee.getDirectReports()){
