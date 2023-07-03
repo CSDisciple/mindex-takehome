@@ -1,4 +1,6 @@
 Com# Coding Challenge
+Gradle version: 6.9.4
+SpringBoot version: 2.2.2.RELEASE
 ## What's Provided
 A simple [Spring Boot](https://projects.spring.io/spring-boot/) web application has been created and bootstrapped 
 with data. The application contains information about all employees at a company. On application start-up, an in-memory 
