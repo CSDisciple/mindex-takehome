@@ -40,7 +40,7 @@ public class CompensationImplTest {
     @Before
     public void setup() {
         compensationCreateUrl = "http://localhost:" + port + "/compensation";
-        compensationReadUrl = "http://localhost:" + port + "/compensation/{od}";
+        compensationReadUrl = "http://localhost:" + port + "/compensation/{id}";
         employeeUrl = "http://localhost:" + port + "/employee";
         employeeIdUrl = "http://localhost:" + port + "/employee/{id}";
     }

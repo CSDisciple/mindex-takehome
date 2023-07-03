@@ -16,9 +16,8 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-    @GetMapping("/employee")
+    @GetMapping("/employee-list")
     public List<Employee> getEmployees() {
-
         return employeeService.readAll();
     }
     @PostMapping("/employee")

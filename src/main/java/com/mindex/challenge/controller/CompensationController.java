@@ -22,7 +22,7 @@ public class CompensationController {
         return compensation;
     }
 
-    @GetMapping("/compensation")
+    @GetMapping("/compensation-list")
     public List<Compensation> read(){
         LOG.debug("Received a read compensation request for all employees");
         return compService.readAll();

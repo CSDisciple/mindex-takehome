@@ -44,7 +44,7 @@ public class ReportingServiceImplTest {
     @Before
     public void setup() {
         reportingIdUrl = "http://localhost:" + port + "/report/{id}";
-        employeeUrl = "http://localhost:" + port + "/employee";
+        employeeUrl = "http://localhost:" + port + "/employee-list";
     }
 
 

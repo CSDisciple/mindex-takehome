@@ -23,10 +23,9 @@ public class CompensationServiceImpl implements CompensationService {
     private EmployeeService employeeService;
 
     @Override
-    //ToDo error handling
     public Compensation create(Compensation compensation) {
         LOG.debug("Creating compensation for employee id [{}]", compensation.getEmployee().getEmployeeId());
-        // need to read from employee repo otherwise directReports will always be null
+        // need to read from employee repo otherwise directReports will always be null otherwise we can simply return the compensation once we set Employee
         Employee employee = employeeService.read(compensation.getEmployee().getEmployeeId());
         compensation.setEmployee(employee);
         compRepository.insert(compensation);
