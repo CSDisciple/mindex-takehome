@@ -9,8 +9,10 @@ accessed and mutated in the database without impacting the snapshot.
 ### How to Run
 The application may be executed by running `gradlew bootRun`.
 
+```
 Gradle version: 6.9.4
 SpringBoot version: 2.2.2.RELEASE
+```
 
 ### How to Use
 The following endpoints are available to use:
